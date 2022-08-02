@@ -10,7 +10,7 @@ pipeline {
         stage('1-Build') {
             steps {
                 sh "mvn -version"
-                sh "mvn clear package"
+                sh "mvn clean package"
             }
         }
         stage('2-Deploy') {
