@@ -10,10 +10,18 @@ pipeline {
         stage('1-Build') {
             steps {
                 sh "mvn -version"
-                sh "mvn package"
+                sh "mvn clear package"
             }
         }
     }
+    stages {
+            stage('2-Deploy') {
+                steps {
+                    sh "ssh jenkins-test@92.63.97.213"
+                    sh "ssh ls -la"
+                }
+            }
+        }
     post {
         always{
             cleanWs()
