@@ -15,7 +15,8 @@ pipeline {
         }
         stage('2-Deploy') {
             steps {
-                sh "ssh jenkins-test@92.63.97.213 'ls -la'"
+                sh "ssh jenkins-test@92.63.97.213"
+                sh "ls -la"
             }
         }
     }
