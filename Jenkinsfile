@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'bellsoft/liberica-openjdk-alpine:17.0.3.1-2'}
+    agent any
 
     tools {
        maven "maven3.8"
@@ -11,8 +11,8 @@ pipeline {
             steps {
                 sh "mvn -version"
                 sh "mvn clean package"
-                sh "docker build -t umk27/jenkins-test:latest ."
-                sh "docker push umk27/jenkins-test:latest"
+                sh "sudo docker build -t umk27/jenkins-test:latest ."
+                sh "sudo docker push umk27/jenkins-test:latest"
             }
         }
         stage('2-Deploy') {
