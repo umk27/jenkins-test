@@ -4,4 +4,4 @@ services:
   jenkins-test:
     image: umk27/jenkins-test:latest
     ports:
-      - "8080:8080"
+      - "8080:8081"
