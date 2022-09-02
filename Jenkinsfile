@@ -17,7 +17,7 @@ pipeline {
         }
         stage('2-Deploy') {
             steps {
-                sh "ssh jenkins-test@92.63.97.213 'docker-compose -f ./jenkins-test/docker-compose.yaml up -d'"
+                sh "ssh jenkins-test@92.63.97.213 'docker-compose -f ./www/jenkins-test.tk/docker-compose.yaml up -d'"
             }
         }
     }
